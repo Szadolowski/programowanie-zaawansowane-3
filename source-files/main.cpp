@@ -77,6 +77,6 @@ int main() {
     std::cout << "Po:    ";
     printVector(doubleTablica);
     std::cout << "\n";
-
+    std::cin.get(); // Pauza przed zamknięciem konsoli (opcjonalne)
     return 0;
 }

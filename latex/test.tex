@@ -1,0 +1,57 @@
+\chapter{Test List }
+\hypertarget{test}{}\label{test}\index{Test List@{Test List}}
+
+\begin{DoxyRefList}
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a4652c1b2d344ec9313e5b70472a9deac}{TEST} (Merge\+Sort\+Test, Already\+Sorted)}}]\hfill \\
+\label{test__test000001}%
+\Hypertarget{test__test000001}%
+{\bfseries{Already\+Sorted}}\+: Sprawdza, czy algorytm zachowuje tablicę niezmienioną, gdy jest ona już posortowana rosnąco. Weryfikuje stabilność dla najprostszego przypadku pozytywnego.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a8fff32c629105ac67900f629161841f7}{TEST} (Merge\+Sort\+Test, Reverse\+Sorted)}}]\hfill \\
+\label{test__test000002}%
+\Hypertarget{test__test000002}%
+{\bfseries{Reverse\+Sorted}}\+: Sprawdza, czy algorytm potrafi posortować tablicę ułożoną w odwrotnej kolejności (malejąco). Jest to pesymistyczny przypadek dla niektórych algorytmów, choć dla Merge\+Sort złożoność pozostaje O(n log n).  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a550a23a4653d03b63b45fdcbbb4851bf}{TEST} (Merge\+Sort\+Test, Random\+Array)}}]\hfill \\
+\label{test__test000003}%
+\Hypertarget{test__test000003}%
+{\bfseries{Random\+Array}}\+: Weryfikuje sortowanie losowej permutacji liczb. Wynik porównywany jest z wynikiem zaufanego algorytmu std\+::sort.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a577373c026520d3f3a8c1a872da7a6dd}{TEST} (Merge\+Sort\+Test, Only\+Negative\+Numbers)}}]\hfill \\
+\label{test__test000004}%
+\Hypertarget{test__test000004}%
+{\bfseries{Only\+Negative\+Numbers}}\+: Sprawdza poprawność sortowania tablicy zawierającej wyłącznie liczby ujemne. Weryfikuje obsługę arytmetyki liczb ze znakiem.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a6c231f8d694b4382ef393be59b1c86d6}{TEST} (Merge\+Sort\+Test, Mixed\+Negative\+And\+Positive)}}]\hfill \\
+\label{test__test000005}%
+\Hypertarget{test__test000005}%
+{\bfseries{Mixed\+Negative\+And\+Positive}}\+: Sprawdza sortowanie tablicy mieszanej (liczby dodatnie, ujemne i zero). Testuje poprawne ustalanie kolejności między liczbami różnych znaków.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a3313a817fb582e0582543a376b761ce5}{TEST} (Merge\+Sort\+Test, Empty\+Array)}}]\hfill \\
+\label{test__test000006}%
+\Hypertarget{test__test000006}%
+{\bfseries{Empty\+Array}}\+: Sprawdza odporność algorytmu na pustą tablicę. Oczekuje braku rzucenia wyjątku i pozostawienia tablicy pustej.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a421083b83ded60e73f15f54639f45937}{TEST} (Merge\+Sort\+Test, Single\+Element)}}]\hfill \\
+\label{test__test000007}%
+\Hypertarget{test__test000007}%
+{\bfseries{Single\+Element}}\+: Sprawdza przypadek brzegowy tablicy jednoelementowej. Taka tablica jest z definicji posortowana i nie powinna ulec zmianie.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_ab887b6013a067f65f2afcef5ef706f8a}{TEST} (Merge\+Sort\+Test, Duplicates)}}]\hfill \\
+\label{test__test000008}%
+\Hypertarget{test__test000008}%
+{\bfseries{Duplicates}}\+: Sprawdza poprawność sortowania tablicy zawierającej powtarzające się wartości. Kluczowe dla weryfikacji stabilności i warunków w pętli scalającej (\texorpdfstring{$<$}{<}=).  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_ad73fa1b56d17c008725be707ebd5f36f}{TEST} (Merge\+Sort\+Test, Negative\+Duplicates)}}]\hfill \\
+\label{test__test000009}%
+\Hypertarget{test__test000009}%
+{\bfseries{Negative\+Duplicates}}\+: Weryfikuje obsługę duplikatów wśród liczb ujemnych.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a4efb76a4fe9df8581a6692974c3fafc6}{TEST} (Merge\+Sort\+Test, Mixed\+With\+Duplicates)}}]\hfill \\
+\label{test__test000010}%
+\Hypertarget{test__test000010}%
+{\bfseries{Mixed\+With\+Duplicates}}\+: Złożony test sprawdzający kombinację liczb ujemnych, dodatnich, zera oraz duplikatów.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_a2cc4dba4da6d397e74b66f4837e8df12}{TEST} (Merge\+Sort\+Test, Two\+Elements\+Sorted)}}]\hfill \\
+\label{test__test000011}%
+\Hypertarget{test__test000011}%
+{\bfseries{Two\+Elements\+Sorted}}\+: Przypadek brzegowy dla rekurencji -\/ tablica dwuelementowa, która nie wymaga zmian.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_acf7141c4d7090248bf4a50710ffb3206}{TEST} (Merge\+Sort\+Test, Large\+Array)}}]\hfill \\
+\label{test__test000012}%
+\Hypertarget{test__test000012}%
+{\bfseries{Large\+Array}}\+: Test wydajnościowy/poprawnościowy dla większej tablicy (150 elementów). Tablica generowana jest w kolejności malejącej, co wymusza pełną pracę algorytmu.  
+\item[{\parbox[t]{\linewidth}{Member \doxylink{test_8cpp_ac0a710c03c49406c74d693d917928b78}{TEST} (Merge\+Sort\+Test, Large\+Array\+Mixed\+Complex)}}]\hfill \\
+\label{test__test000013}%
+\Hypertarget{test__test000013}%
+{\bfseries{Large\+Array\+Mixed\+Complex}}\+: Kompleksowy test (Stress Test) na losowych danych. Generuje 200 liczb z zakresu \mbox{[}-\/50, 50\mbox{]}, co gwarantuje wystąpienie duplikatów oraz mieszanki znaków. Wynik weryfikowany względem std\+::sort. 
+\end{DoxyRefList}

@@ -1,0 +1,65 @@
+\doxysection{Merge\+Sorter\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{class_merge_sorter}{}\label{class_merge_sorter}\index{MergeSorter$<$ T $>$@{MergeSorter$<$ T $>$}}
+
+
+Klasa implementująca algorytm sortowania przez scalanie (Merge Sort).  
+
+
+
+
+{\ttfamily \#include $<$merge-\/sort.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_merge_sorter_a1be46b1456af8fcf9c4c386df6e26cef}\label{class_merge_sorter_a1be46b1456af8fcf9c4c386df6e26cef} 
+{\bfseries Merge\+Sorter} ()=default
+\begin{DoxyCompactList}\small\item\em Domyślny konstruktor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_merge_sorter_aec161b926751953c671b73812882b2e1}{sort}} (std\+::vector$<$ T $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em Główna metoda uruchamiająca sortowanie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Merge\+Sorter$<$ T $>$}
+Klasa implementująca algorytm sortowania przez scalanie (Merge Sort). 
+
+
+\begin{DoxyItemize}
+\item Klasa wykorzystuje szablony, aby obsługiwać różne typy danych liczbowych.
+\item 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typ danych przechowywanych w tablicy (np. int, double, float). Typ T musi obsługiwać operatory porównania (\texorpdfstring{$<$}{<}, \texorpdfstring{$<$}{<}=). \\
+\hline
+\end{DoxyTemplParams}
+
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{class_merge_sorter_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_merge_sorter_aec161b926751953c671b73812882b2e1}\index{MergeSorter$<$ T $>$@{MergeSorter$<$ T $>$}!sort@{sort}}
+\index{sort@{sort}!MergeSorter$<$ T $>$@{MergeSorter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{sort()}{sort()}}
+{\footnotesize\ttfamily \label{class_merge_sorter_aec161b926751953c671b73812882b2e1} 
+template$<$typename T$>$ \\
+void \mbox{\hyperlink{class_merge_sorter}{Merge\+Sorter}}$<$ T $>$\+::sort (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$ \&}]{arr}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Główna metoda uruchamiająca sortowanie. 
+
+
+\begin{DoxyItemize}
+\item Metoda jest interfejsem publicznym. Sprawdza warunki brzegowe (pusta tablica) i wywołuje rekurencyjną metodę sortującą.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em arr} & Referencja do wektora, który ma zostać posortowany. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+merge-\/sort-\/app/merge-\/sort.\+h\end{DoxyCompactItemize}
