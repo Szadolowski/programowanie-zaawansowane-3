@@ -12,15 +12,15 @@
         "-std=c++17",
         // Gdzie szukać plików .h
         "-I",
-        "${workspaceFolder}/merge-sort-app",
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-app",
         // Co kompilować
-        "${workspaceFolder}/source-files/main.cpp",
+        "${workspaceFolder}/programowanie-zaawansowane-3/source-files/main.cpp",
         // Gdzie zapisać wynik
         "-o",
-        "${workspaceFolder}/main.exe"
+        "${workspaceFolder}/programowanie-zaawansowane-3/main.exe"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}/programowanie-zaawansowane-3"
       },
       "problemMatcher": ["$gcc"],
       "group": {
@@ -40,12 +40,12 @@
         "-std=c++17",
         // Gdzie szukać plików .h (testy muszą widzieć MergeSorter.h!)
         "-I",
-        "${workspaceFolder}/merge-sort-app",
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-app",
         // Co kompilować
-        "${workspaceFolder}/merge-sort-test/test.cpp",
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-test/test.cpp",
         // Gdzie zapisać wynik
         "-o",
-        "${workspaceFolder}/testy.exe",
+        "${workspaceFolder}/programowanie-zaawansowane-3/testy.exe",
 
         // --- Biblioteki Google Test ---
         // WAŻNE: To zakłada, że masz zainstalowany pakiet gtest w MSYS2
@@ -55,7 +55,7 @@
         "-pthread"
       ],
       "options": {
-        "cwd": "${workspaceFolder}"
+        "cwd": "${workspaceFolder}/programowanie-zaawansowane-3"
       },
       "problemMatcher": ["$gcc"],
       "group": {

@@ -5,6 +5,7 @@
 */
 
 #include <iostream>
+#include "merge-sort.h"
 
 
 int main(int argc, char* argv[]) {
