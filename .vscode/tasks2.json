@@ -1,0 +1,68 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      // --- ZADANIE 1: Budowanie głównej aplikacji (main.cpp) ---
+      "type": "cppbuild",
+      "label": "1. Zbuduj Aplikację (Main)",
+      "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-std=c++17",
+        // Gdzie szukać plików .h
+        "-I",
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-app",
+        // Co kompilować
+        "${workspaceFolder}/programowanie-zaawansowane-3/source-files/main.cpp",
+        // Gdzie zapisać wynik
+        "-o",
+        "${workspaceFolder}/programowanie-zaawansowane-3/main.exe"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/programowanie-zaawansowane-3"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Kompiluje source-files/main.cpp"
+    },
+    {
+      // --- ZADANIE 2: Budowanie testów (test.cpp) ---
+      "type": "cppbuild",
+      "label": "2. Zbuduj Testy (Google Test)",
+      "command": "C:\\msys64\\ucrt64\\bin\\g++.exe",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-std=c++17",
+        // Gdzie szukać plików .h (testy muszą widzieć MergeSorter.h!)
+        "-I",
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-app",
+        // Co kompilować
+        "${workspaceFolder}/programowanie-zaawansowane-3/merge-sort-tests/test.cpp",
+        // Gdzie zapisać wynik
+        "-o",
+        "${workspaceFolder}/programowanie-zaawansowane-3/testy.exe",
+
+        // --- Biblioteki Google Test ---
+        // WAŻNE: To zakłada, że masz zainstalowany pakiet gtest w MSYS2
+        // (polecenie: pacman -S mingw-w64-ucrt-x86_64-gtest)
+        "-lgtest",
+        "-lgtest_main",
+        "-pthread"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/programowanie-zaawansowane-3"
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "detail": "Kompiluje merge-sort-tests/test.cpp z biblioteką GTest"
+    }
+  ]
+}
