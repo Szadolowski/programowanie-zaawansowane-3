@@ -1,0 +1,89 @@
+\doxysection{merge-\/sort.h}
+\hypertarget{merge-sort_8h_source}{}\label{merge-sort_8h_source}\index{merge-\/sort-\/app/merge-\/sort.h@{merge-\/sort-\/app/merge-\/sort.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_merge_sorter_a1be46b1456af8fcf9c4c386df6e26cef}{MergeSorter}}\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{class_merge_sorter_a1be46b1456af8fcf9c4c386df6e26cef}{MergeSorter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_merge_sorter_aec161b926751953c671b73812882b2e1}{sort}}(std::vector<T>\&\ arr)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (arr.size()\ <=\ 1)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Tablica\ pusta\ lub\ 1-\/elementowa\ jest\ już\ posortowana}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rzutujemy\ size()\ na\ int,\ aby\ uniknąć\ problemów\ z\ typami\ unsigned\ w\ logice\ indeksów}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ sortRecursive(arr,\ 0,\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(arr.size())\ -\/\ 1);}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ sortRecursive(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ right)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (left\ >=\ right)\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ Warunek\ stopu\ rekurencji}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Znajdź\ środek\ (chroni\ przed\ overflow\ przy\ dużych\ liczbach)}}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mid\ =\ left\ +\ (right\ -\/\ left)\ /\ 2;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sortuj\ lewą\ połowę}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ sortRecursive(arr,\ left,\ mid);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Sortuj\ prawą\ połowę}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ sortRecursive(arr,\ mid\ +\ 1,\ right);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Scal\ obie\ posortowane\ połowy}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ merge(arr,\ left,\ mid,\ right);}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ merge(std::vector<T>\&\ arr,\ \textcolor{keywordtype}{int}\ left,\ \textcolor{keywordtype}{int}\ mid,\ \textcolor{keywordtype}{int}\ right)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Rozmiary\ tymczasowych\ tablic}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n1\ =\ mid\ -\/\ left\ +\ 1;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ n2\ =\ right\ -\/\ mid;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Utworzenie\ tymczasowych\ wektorów}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ std::vector<T>\ leftArr(n1);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ std::vector<T>\ rightArr(n2);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Kopiowanie\ danych\ do\ tablic\ tymczasowych}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ n1;\ i++)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ leftArr[i]\ =\ arr[left\ +\ i];}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ n2;\ j++)}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ rightArr[j]\ =\ arr[mid\ +\ 1\ +\ j];}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Scalanie\ tablic\ tymczasowych\ z\ powrotem\ do\ arr}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ i\ =\ 0;\ \textcolor{comment}{//\ Indeks\ początkowy\ pierwszej\ podtablicy}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ j\ =\ 0;\ \textcolor{comment}{//\ Indeks\ początkowy\ drugiej\ podtablicy}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ k\ =\ left;\ \textcolor{comment}{//\ Indeks\ początkowy\ scalonej\ podtablicy}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n1\ \&\&\ j\ <\ n2)\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Używamy\ <=\ aby\ zachować\ stabilność\ algorytmu\ (dla\ duplikatów)}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (leftArr[i]\ <=\ rightArr[j])\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ leftArr[i];}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ rightArr[j];}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skopiuj\ pozostałe\ elementy\ z\ leftArr,\ jeśli\ są}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (i\ <\ n1)\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ leftArr[i];}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ i++;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Skopiuj\ pozostałe\ elementy\ z\ rightArr,\ jeśli\ są}}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (j\ <\ n2)\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ arr[k]\ =\ rightArr[j];}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ j++;}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ k++;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ \};}
+
+\end{DoxyCode}

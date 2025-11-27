@@ -1,0 +1,88 @@
+\doxysection{source-\/files/main.cpp File Reference}
+\hypertarget{main_8cpp}{}\label{main_8cpp}\index{source-\/files/main.cpp@{source-\/files/main.cpp}}
+
+
+Główny plik programu demonstracyjnego algorytmu Merge Sort.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$iomanip$>$}\newline
+{\ttfamily \#include "{}merge-\/sort.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T$>$ }\\void \mbox{\hyperlink{main_8cpp_a721cdbc6bd980bd328255feba8168f26}{print\+Vector}} (const std\+::vector$<$ T $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Funkcja pomocnicza do wyświetlania zawartości wektora na standardowe wyjście. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\begin{DoxyCompactList}\small\item\em Główna funkcja programu (Punkt wejścia). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Główny plik programu demonstracyjnego algorytmu Merge Sort. 
+
+
+\begin{DoxyItemize}
+\item Plik zawiera implementację funkcji main, która realizuje wymagania projektowe\+: utworzenie instancji tablic dla typów int oraz double i ich posortowanie. \begin{DoxyAuthor}{Author}
+Twoje Imię i Nazwisko 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2023 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+\label{doc-func-members}
+\Hypertarget{main_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+int main (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Główna funkcja programu (Punkt wejścia). 
+
+
+\begin{DoxyItemize}
+\item Funkcja realizuje scenariusz testowy wymagany w zadaniu\+:
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Inicjalizuje tablicę liczb całkowitych (int).
+\item Inicjalizuje tablicę liczb zmiennoprzecinkowych (double).
+\item Wykorzystuje klasę \doxylink{class_merge_sorter}{Merge\+Sorter} do posortowania obu tablic.
+\item Prezentuje wyniki "{}przed"{} i "{}po"{} na konsoli.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+int Zwraca 0, sygnalizując poprawne zakończenie programu. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{main_8cpp_a721cdbc6bd980bd328255feba8168f26}\index{main.cpp@{main.cpp}!printVector@{printVector}}
+\index{printVector@{printVector}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{printVector()}{printVector()}}
+{\footnotesize\ttfamily \label{main_8cpp_a721cdbc6bd980bd328255feba8168f26} 
+template$<$typename T$>$ \\
+void print\+Vector (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{vec}{}\end{DoxyParamCaption})}
+
+
+
+Funkcja pomocnicza do wyświetlania zawartości wektora na standardowe wyjście. 
+
+
+\begin{DoxyItemize}
+\item Jest to szablon funkcji, który iteruje po elementach wektora i wypisuje je w jednej linii oddzielone spacjami.
+\item 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Typ danych przechowywanych w wektorze. Typ T musi obsługiwać operator strumieniowy \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} (np. int, double). \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & Referencja do stałego wektora (const std\+::vector$<$\+T$>$\&), którego zawartość ma zostać wyświetlona. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
